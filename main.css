@@ -1,88 +1,79 @@
-body {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-  color: black;
-  font-family: Helvetica;
-  font-weight: lighter;
-  font-size: 1.5vw;
+html, body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
 
-h1 {
-  font-family: didot;
-}
-
-#header-1 {
-  background-color: transparent;
-  display: inline-block;
-  position: sticky;
-  top: 0;
-  height: 3em;
-  width: 100%;
-}
-
-#img {
-  position: absolute;
-  top: 0;
-  width: 3em;
-  height: 3em;
-  background-color: grey;
-}
-
-.nav-bar {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  
-  top: 0em;
-  left: calc(3em + 31.5%);
-  height: 3em;
-  background-color: transparent;
-}
-
-#contact-box {
-  position: absolute;
-  top: 0em;
-  left: 56.9em;
-  height: 3em;
-  background-color: transparent;
-}
-
-#contact {
-  }
-
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  background-color: transparent;
-}
-
-.nav-link {
-  font-size: 2vw;
-  font-family: didot;
-  color: black;
-  text-decoration: none;
-  padding-right: 2vw;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.content-box {
+body {  
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   width: 100%;
+  background-color: #f9f9f9;
+  
+  
+  font-family: Futura;
+}
+header {
+  disply: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 45em;
+  background: #46BD9B;
+}
+
+.hero-background {
+  border-left: 100vw solid #79CAB5;
+  border-bottom: 20em solid transparent;
+  height: 45em;
+}
+
+.footer-background {
+  border-left: 100vw solid #E2F2ED;
+  border-top: 20em solid transparent;
   height: 25em;
-  padding: 1vh;
-  border-style: solid;
-  border-width: 1px;
+}
+
+.half-circle-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+.half-circle-vertical {
+  display: flex;
+  flex-direction: row;
+}
+.half-circle-top {
+    width: 200px;
+    height: 100px; /* as the half of the width */
+    background-color: gold;
+    border-bottom-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+.half-circle-bottom {
+    width: 200px;
+    height: 100px; /* as the half of the width */
+    background-color: gold;
+    border-top-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+.half-circle-right {
+    width: 100px;
+    height: 200px; /* as the half of the width */
+    background-color: gold;
+    border-top-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-left-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+.half-circle-left {
+    width: 100px;
+    height: 200px; /* as the half of the width */
+    background-color: gold;
+    border-top-right-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
 }
