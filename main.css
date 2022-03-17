@@ -1,48 +1,212 @@
+/*
+
+***************************************************************************************                                      12 COLUMN GRID SETUP
+***************************************************************************************
+
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 12px;
+}
+
+[class*="col-"]  {
+  /*put anything you need for ALL column classes here*/
+}
+.col-1 {
+  grid-column: span 1;
+}
+.col-2 {
+  grid-column: span 2;
+}
+.col-3 {
+  grid-column: span 3;
+}
+.col-4 {
+  grid-column: span 4;
+}
+.col-5 {
+  grid-column: span 5;
+}
+.col-6 {
+  grid-column: span 6;
+}
+.col-7 {
+  grid-column: span 7;
+}
+.col-8 {
+  grid-column: span 8;
+}
+.col-9 {
+  grid-column: span 9;
+}
+.col-10 {
+  grid-column: span 10;
+}
+.col-11 {
+  grid-column: span 11;
+}
+.col-12 {
+  grid-column: span 12;
+}
+/*
+
+***************************************************************************************                                     GENERIC STYLING
+***************************************************************************************
+
+*/
 html, body {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family: Futura;
+  background-color: #f9f9f9;
+  font-size: 100%;
 }
 
 body {  
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  background-color: #f9f9f9;
-  
-  
-  font-family: Futura;
+  z-index: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
+
 header {
-  disply: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  height: 45em;
-  background: #46BD9B;
+  grid-template-rows: 5em 40em;
 }
 
-.hero-background {
-  border-left: 100vw solid #79CAB5;
-  border-bottom: 20em solid transparent;
-  height: 45em;
+navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
 }
 
-.footer-background {
-  border-left: 100vw solid #E2F2ED;
+footer {
+  
+}
+/*
+
+***************************************************************************************                                     TEXT STYLING
+***************************************************************************************
+
+*/
+h1 {
+  color: #f9f9f9;
+  font-weight: 600;
+  /*348px*/
+  font-size: 22em;
+  /*tweak to get the text exactly aligned with bottom of header div*/
+  line-height: 1.1985em;
+  text-align: center;
+}
+
+h2 {
+  color: #f9f9f9;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4em;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+h3 {
+
+
+color: #F9F9F9;
+}
+
+p {
+  
+}
+
+a {
+  text-decoration: none;
+  color: #f9f9f9;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*
+
+***************************************************************************************                                      CLASS STYLING
+***************************************************************************************
+
+*/
+#header-background {
+  background-color: #1B190F;
+  z-index: 2;
+}
+
+#hero-background {
+  position: relative;
+  top: -6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45em;
+  transform: skewY(6deg);
+  background-color: #423E2C;
+  z-index: 1;
+}
+
+#hero-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(-6deg);
+}
+
+#footer-background {
+  position: absolute;
+  top: 200em;
+  border-right: 100vw solid #DEDCD5;
   border-top: 20em solid transparent;
   height: 25em;
 }
 
+#contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f9f9f9;
+}
+
+
+
+
+
+
+
+
+/*
+
+***********************************************************************************                                     COLOR PALETTE DIVS
+***********************************************************************************
+
+*/
 .half-circle-horizontal {
   display: flex;
   flex-direction: column;
 }
+
 .half-circle-vertical {
   display: flex;
   flex-direction: row;
 }
+
 .half-circle-top {
     width: 200px;
     height: 100px; /* as the half of the width */
@@ -60,6 +224,7 @@ header {
     border-top-right-radius: 110px; /* 100px of height + 10px of border */
     border-bottom: 0;
 }
+
 .half-circle-right {
     width: 100px;
     height: 200px; /* as the half of the width */
