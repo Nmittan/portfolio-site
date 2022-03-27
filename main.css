@@ -1,54 +1,4 @@
-/*
 
-***************************************************************************************                                      12 COLUMN GRID SETUP
-***************************************************************************************
-
-*/
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 12px;
-}
-
-[class*="col-"]  {
-  /*put anything you need for ALL column classes here*/
-}
-.col-1 {
-  grid-column: span 1;
-}
-.col-2 {
-  grid-column: span 2;
-}
-.col-3 {
-  grid-column: span 3;
-}
-.col-4 {
-  grid-column: span 4;
-}
-.col-5 {
-  grid-column: span 5;
-}
-.col-6 {
-  grid-column: span 6;
-}
-.col-7 {
-  grid-column: span 7;
-}
-.col-8 {
-  grid-column: span 8;
-}
-.col-9 {
-  grid-column: span 9;
-}
-.col-10 {
-  grid-column: span 10;
-}
-.col-11 {
-  grid-column: span 11;
-}
-.col-12 {
-  grid-column: span 12;
-}
 /*
 
 ***************************************************************************************                                     GENERIC STYLING
@@ -59,7 +9,7 @@ html, body {
   margin:0;
   padding:0;
   overflow-x:hidden;
-  font-family: Futura;
+  font-family: 'Futura PT';
   background-color: #f9f9f9;
   font-size: 100%;
 }
@@ -74,19 +24,78 @@ body {
 }
 
 header {
-  grid-template-rows: 5em 40em;
+  grid-template-rows: 40em;
+  background-color: #1B190F;
+  z-index: 2;
 }
 
-navbar {
+nav {
+  background-color:#1B190F;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 2em;
+  margin: 0px;
+  background-color: transparent;
+
+}
+
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.button-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 4px;
+  height: 4em;
+  background-color: transparent;
+  padding: 0 1em 0 1em;
+}
+
+.button-right {
+  position: relative;
+  left: -.24em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 4px;
+  height: 4em;
+  width: 4em;
+  background-color: transparent;
 }
 
 footer {
-  
+  position: relative;
+  bottom: -13em;
+  grid-template-rows: 45em;
+  transform: skewY(-6deg);
+  background-color: #DEDCD5;
+  z-index: 1;
 }
 /*
 
@@ -100,7 +109,7 @@ h1 {
   /*348px*/
   font-size: 22em;
   /*tweak to get the text exactly aligned with bottom of header div*/
-  line-height: 1.1985em;
+  line-height: 1.615em;
   text-align: center;
 }
 
@@ -108,17 +117,21 @@ h2 {
   color: #f9f9f9;
   font-style: normal;
   font-weight: 400;
-  font-size: 4em;
+  font-size: 3.5em;
   letter-spacing: 0.03em;
   text-align: center;
 }
 
 h3 {
+font-size: 96px;
 
-
-color: #F9F9F9;
+color: black;
 }
 
+h4 {
+  font-size: 2em;
+  font-weight: 600;
+}
 p {
   
 }
@@ -136,18 +149,16 @@ a {
 ***************************************************************************************
 
 */
-#header-background {
+
+#navbar {
+  height: 7.5em;
   background-color: #1B190F;
-  z-index: 2;
 }
 
-#hero-background {
+#hero-text {
   position: relative;
   top: -6em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45em;
+  grid-template-rows: 45em;
   transform: skewY(6deg);
   background-color: #423E2C;
   z-index: 1;
@@ -155,18 +166,10 @@ a {
 
 #hero-text-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  
   transform: skewY(-6deg);
-}
-
-#footer-background {
-  position: absolute;
-  top: 200em;
-  border-right: 100vw solid #DEDCD5;
-  border-top: 20em solid transparent;
-  height: 25em;
 }
 
 #contact {
@@ -184,7 +187,12 @@ a {
   background-color: #f9f9f9;
 }
 
-
+#about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 
 
@@ -241,4 +249,57 @@ a {
     border-top-right-radius: 110px;  /* 100px of height + 10px of border */
     border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
     border-bottom: 0;
+}
+
+
+/*
+
+***************************************************************************************                                      12 COLUMN GRID SETUP
+***************************************************************************************
+
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 12px;
+}
+
+[class*="col-"]  {
+  /*put anything you need for ALL column classes here*/
+}
+.col-1 {
+  grid-column: span 1;
+}
+.col-2 {
+  grid-column: span 2;
+}
+.col-3 {
+  grid-column: span 3;
+}
+.col-4 {
+  grid-column: span 4;
+}
+.col-5 {
+  grid-column: span 5;
+}
+.col-6 {
+  grid-column: span 6;
+}
+.col-7 {
+  grid-column: span 7;
+}
+.col-8 {
+  grid-column: span 8;
+}
+.col-9 {
+  grid-column: span 9;
+}
+.col-10 {
+  grid-column: span 10;
+}
+.col-11 {
+  grid-column: span 11;
+}
+.col-12 {
+  grid-column: span 12;
 }
