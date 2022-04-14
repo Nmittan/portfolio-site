@@ -1,0 +1,318 @@
+/*
+
+***************************************************************************************                                     GENERIC STYLING
+***************************************************************************************
+
+*/
+
+ :root {
+  --color-1: #46BD9B;
+  --color-2: #79CAB5;
+  --color-3: #E2F2ED;
+  --color-4: #f9f9f9;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family: 'Futura PT';
+  background-color: var(--color-4);
+  color: var(--color-1);
+  font-size: 100%;
+}
+
+body {  
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+header {
+  grid-template-rows: 40em;
+  background-color: var(--color-1);
+  z-index: 2;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main {
+  height: 80em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 2em;
+  margin: 0px;
+  background-color: transparent;
+
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.button-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid var(--color-1) 4px;
+  height: 4em;
+  background-color: transparent;
+  padding: 0 1em 0 1em;
+}
+
+.button-right {
+  position: relative;
+  left: -.24em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid var(--color-1) 4px;
+  height: 4em;
+  width: 4em;
+  background-color: transparent;
+}
+
+footer {
+  position: relative;
+  bottom: -13em;
+  grid-template-rows: 45em;
+  transform: skewY(-6deg);
+  background-color: var(--color-3);
+  z-index: 1;
+}
+/*
+
+***************************************************************************************                                     TEXT STYLING
+***************************************************************************************
+
+*/
+h1 {
+  color: var(--color-4);
+  font-weight: 600;
+  /*348px*/
+  font-size: 22em;
+  /*tweak to get the text exactly aligned with bottom of header div*/
+  line-height: 1.615em;
+  text-align: center;
+}
+
+h2 {
+  color: var(--color-4);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.5em;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+h3 {
+font-size: 96px;
+}
+
+h4 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+p {
+  color: var(--color-1);
+  font-size: 36px;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-4);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*
+
+***************************************************************************************                                      CLASS STYLING
+***************************************************************************************
+
+*/
+
+#navbar {
+  height: 7.5em;
+  background-color: var(--color-1);
+}
+
+#hero-text {
+  position: relative;
+  top: -6em;
+  grid-template-rows: 45em;
+  transform: skewY(6deg);
+  background-color: var(--color-2);
+  z-index: 1;
+}
+
+#hero-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: skewY(-6deg);
+}
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+/*
+#home-link {
+  color: #f9f9f9;
+}
+#about-link {
+  color: #B1ADD6;
+}
+#style-link {
+  color: #C9E7DE;
+}
+#work-link {
+  color: #F8B5C6;
+}
+*/
+.hero-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*
+
+***********************************************************************************                                     COLOR PALETTE DIVS
+***********************************************************************************
+
+*/
+.half-circle-horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+.half-circle-vertical {
+  display: flex;
+  flex-direction: row;
+}
+
+.half-circle-top {
+    width: 200px;
+    height: 100px; /* as the half of the width */
+    background-color: gold;
+    border-bottom-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+.half-circle-bottom {
+    width: 200px;
+    height: 100px; /* as the half of the width */
+    background-color: gold;
+    border-top-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-top-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+.half-circle-right {
+    width: 100px;
+    height: 200px; /* as the half of the width */
+    background-color: gold;
+    border-top-left-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-left-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+.half-circle-left {
+    width: 100px;
+    height: 200px; /* as the half of the width */
+    background-color: gold;
+    border-top-right-radius: 110px;  /* 100px of height + 10px of border */
+    border-bottom-right-radius: 110px; /* 100px of height + 10px of border */
+    border-bottom: 0;
+}
+
+
+/*
+
+***************************************************************************************                                      12 COLUMN GRID SETUP
+***************************************************************************************
+
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 12px;
+}
+
+[class*="col-"]  {
+  /*put anything you need for ALL column classes here*/
+}
+.col-1 {
+  grid-column: span 1;
+}
+.col-2 {
+  grid-column: span 2;
+}
+.col-3 {
+  grid-column: span 3;
+}
+.col-4 {
+  grid-column: span 4;
+}
+.col-5 {
+  grid-column: span 5;
+}
+.col-6 {
+  grid-column: span 6;
+}
+.col-7 {
+  grid-column: span 7;
+}
+.col-8 {
+  grid-column: span 8;
+}
+.col-9 {
+  grid-column: span 9;
+}
+.col-10 {
+  grid-column: span 10;
+}
+.col-11 {
+  grid-column: span 11;
+}
+.col-12 {
+  grid-column: span 12;
+}
