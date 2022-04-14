@@ -7,19 +7,17 @@
   <title>Home.</title>
 </head>
   
-  
-  
 <body>
   <div class="grid" id="navbar">
     <div class="col-1"></div>
-    <section class="col-1" id="logo"></section>
+    <section class="col-1" id="logo"><img src="https://assets.codepen.io/7691942/Logo_Black-01.svg" /></section>
     <div class="col-1"></div>
 
     <nav class="col-6">
-      <a class="nav-link" href="#Home">HOME</a>
-      <a class="nav-link" href="#About">ABOUT</a>
-      <a class="nav-link" href="#Why">STYLE</a>
-      <a class="nav-link" href="#Work">WORK</a>
+      <a class="nav-link" id="home-link" href="#Home">HOME</a>
+      <a class="nav-link" id="about-link" href="#About">ABOUT</a>
+      <a class="nav-link" id="style-link" href="#Why">STYLE</a>
+      <a class="nav-link" id="work-link" href="#Work">WORK</a>
     </nav>
     <section class="col-2" id="contact">
       <a class="nav-link" href="#Contact">CONTACT</a>
@@ -45,13 +43,29 @@
   </section>
   
   <main>
-    <div id="about-me">
+    <section class="hero-link" id="about-me">
       <h3>About Me</h3>
       <button type="button">
         <div class="button-left"><h4>VIEW MY STORY</h4></div>
-        <div class="button-right"></div>
+        <div class="button-right"><img src="https://assets.codepen.io/7691942/Icon-Arrow-Right-Alt-01.svg" /></div>
       </button>
-    </div>
+    </section>
+    
+    <section class="hero-link" id="styleguide">
+      <h3>Style Guide</h3>
+      <button type="button">
+        <div class="button-left"><h4>VIEW MY STYLE</h4></div>
+        <div class="button-right"><img src="https://assets.codepen.io/7691942/Icon-Arrow-Right-Alt-01.svg" /></div>
+      </button>
+    </section>
+    
+    <section class="hero-link" id="portfolio">
+      <h3>Portfolio Projects</h3>
+      <button type="button">
+        <div class="button-left"><h4>VIEW MY WORK</h4></div>
+        <div class="button-right"><img src="https://assets.codepen.io/7691942/Icon-Arrow-Right-Alt-01.svg" /></div>
+      </button>
+    </section>
   </main>
   <!--
   <div class="half-circle-horizontal">
