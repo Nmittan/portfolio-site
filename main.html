@@ -9,24 +9,22 @@
 </head>
   
 <body>
-  <div class="grid" id="navbar">
-    <div class="col-1"></div>
-    <section class="col-1" id="logo"><img src="https://assets.codepen.io/7691942/Logo_Black-01.svg" /></section>
-    <div class="col-1"></div>
-
-    <nav class="col-6">
-      <a class="nav-link" id="home-link" href="#Home">HOME</a>
-      <a class="nav-link" id="about-link" href="#About">ABOUT</a>
-      <a class="nav-link" id="style-link" href="#Why">STYLE</a>
-      <a class="nav-link" id="work-link" href="#Work">WORK</a>
-    </nav>
-    <section class="col-2" id="contact">
-      <a class="nav-link" href="#Contact">CONTACT</a>
-   </section>
-   <div class="col-1"></div>
- </div>
+  <nav class="sticky">
+    <div class="logo-container">
+      <img src="https://assets.codepen.io/7691942/Logo_Black-01.svg" />
+    </div>
       
+    <ul class="links-container">
+      <li><a href="#About">ABOUT</a></li>
+      <li><a href="#Why">STYLE</a></li>
+      <li><a href="#Work">WORK</a></li>
+    </ul>
       
+    <li class="contact-container">
+      <a href="#Contact">CONTACT</a>
+    </li>
+  </nav>   
+  
   <header class="grid">
     <div class="col-1"></div>
     <div class="col-10">
@@ -35,16 +33,16 @@
     <div class="col-1"></div>
   </header>  
   
-  <section class="grid" id="hero-text">
+  <section class="grid" id="hero-section">
     <div class="col-1"></div>
-    <div class="col-10" id="hero-text-container">
-      <h2>I’m a student interested in helping my community through accessible and elegant design.</h2>
+    <div class="col-10">
+      <h2>Home.</h2>
     </div>
-    <div class="col-1"></div>
+    <div class="col-1"></div>  
   </section>
   
   <main>
-    <section class="hero-link" id="about-me">
+    <section class="hero-link" id="about">
       <h3>About Me</h3>
       <button type="button">
         <div class="button-left"><h4>VIEW MY STORY</h4></div>
@@ -55,7 +53,7 @@
     <section class="hero-link" id="styleguide">
       <h3>Style Guide</h3>
       <button type="button">
-        <div class="button-left"><h4>VIEW MY STYLE</h4></div>
+        <div class="button-left"><h4>VIEW MY STYLE</h4>             </div>
         <div class="button-right"><img src="https://assets.codepen.io/7691942/Icon-Arrow-Right-Alt-01.svg" /></div>
       </button>
     </section>
@@ -68,18 +66,30 @@
       </button>
     </section>
   </main>
-  <!--
-  <div class="half-circle-horizontal">
-    <div class="half-circle-top"></div>
-    <div class="half-circle-bottom"></div>
-  </div>
-  
-  <div class="half-circle-vertical">
-    <div class="half-circle-left"></div>
-    <div class="half-circle-right"></div>
-  </div>
-  -->
-  <footer class="grid">
+
+  <footer>
   </footer>
+  <section class="grid" id="footer-section">
+    <div class="col-1"></div>
+    <div class="col-10" id="contact-bar">
+      
+      <a class="contact-links" href="https://www.wikipedia.com/">
+         <img alt="Email" src="https://assets.codepen.io/7691942/email-min.svg"
+         width="60" height="48">
+      </a>
+      
+      <a class="contact-links" href="https://www.wikipedia.com/">
+         <img alt="Instagram" src="https://assets.codepen.io/7691942/Instagram-min.svg"
+         width="48" height="48">
+      </a>
+      
+      <a class="contact-links" href="https://www.wikipedia.com/">
+         <img alt="Linkedin" src="https://assets.codepen.io/7691942/linkedin-min.svg"
+         width="48" height="48">
+      </a>
+      
+    </div>
+    <div class="col-1"></div>
+  </section>
 </body>
 </html>
