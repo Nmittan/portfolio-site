@@ -1,6 +1,23 @@
-/* || VARIABLE INITALIZATION */
+/* || VARIABLE INITALIZATION 
+y1: 12px
+y2: 24px
+x1: 320/16 rem
+x2: 1024/16 rem
 
+v = (100 * (y2 - y1))/(x2 - x1)
+
+r = ((y1 - (v/100) * x1)/16)
+*/
  :root {
+  /*
+  --v: calc((100 * (24 - 12))/(1024 - 320));
+  --v: 1.7045vw;
+  --r: calc((12 - (var(--v)/100) * 320)/16);
+   12 - 5.4544 = 6.5456/16 = 0.4091rem
+  */
+  --v-vsmall: 1.7045vw;
+  --r-vsmall: 0.4091rem;
+  --font-size1: clamp(0.75rem, calc(var(--v-vsmall) + var(--r-vsmall)), 1.5rem);
   --color-1: #1B190F;
   --color-2: #423E2C;
   --color-3: #DEDCD5;
@@ -30,7 +47,8 @@ body {
 }
 
 header {
-  grid-template-rows: 40em;
+  top: var(--base-height);
+  height: 40vw;
   background-color: var(--color-1);
   z-index: 2;
 }
@@ -55,8 +73,6 @@ main {
   align-items: center;
 }
 
-
-
 ul {
   width: 33%;
   list-style-type: none;
@@ -72,26 +88,24 @@ li {
 
 h1 {
   color: var(--color-4);
-  font-weight: 600;
-  /*348px*/
-  font-size: 22em;
-  /*tweak to get the text exactly aligned with bottom of header div*/
-  line-height: 1.615em;
+  font-weight: Heavy;
+  font-size: 20vw;
+  line-height: 39.5vw;
   text-align: center;
 }
 
 h2 {
-  color: var(--color-4);
-  font-style: normal;
+  font-size: 3.5rem;
   font-weight: 400;
-  font-size: 3.5em;
-  letter-spacing: 0.03em;
+  color: var(--color-4);
   text-align: center;
 }
 
 h3 {
-  font-size: 96px;
-  color: #1b190f;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-1);
+  text-align: center;
 }
 
 h4 {
@@ -100,13 +114,13 @@ h4 {
 }
 
 p {
-  
+  font-size: 2.25rem;
 }
 
 a {
   text-decoration: none;
   color: var(--color-4);
-  font-size: 24px;
+  font-size: var(--font-size1);
   font-weight: 700;
 }
 
@@ -151,26 +165,24 @@ button, input[type="submit"], input[type="reset"] {
   padding-left: 9%;
 }
 
-/* || 
-TEXT CLASSES */
-
+/* || TEXT CLASSES */
 
 #hero-section {
   left: 0;
   width: 100%;
   background-image: url("https://assets.codepen.io/7691942/Home-Hero.svg");
   background-color: transparent; /* Used if the image is unavailable */
-  height: 85em; /* You must set a specified height */
+  height: 80vmax; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-#hero-text-container {
+#hero-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  
+  align-items: flex-start;
+  padding-top: 10em;
 }
 
 /* || MAIN CLASSES */
@@ -203,10 +215,10 @@ TEXT CLASSES */
   width: 4em;
   background-color: transparent;
 }
+
 /* || FOOTER CLASSES */
 footer {
-  background-image: url("https://assets.codepen.io/7691942/Home-Footer.svg");
-  left: 0;
+background-image: url("https://assets.codepen.io/7691942/Home-Footer-1.svg");  left: 0;
   width: 100%;
   background-color: transparent; /* Used if the image is unavailable */
   height: 85em; /* You must set a specified height */
@@ -231,6 +243,7 @@ footer {
 .contact-links {
   padding-left: calc(var(--base-height)/2);
 }
+
 /* || 12 COLUMN GRID SETUP*/
 
 .grid {
@@ -278,3 +291,73 @@ footer {
 .col-12 {
   grid-column: span 12;
 }
+
+/*old way of doing responsive typography*/
+/*Fixed minimum value below min breakpoint */
+.fluid {
+  font-size: 32px;
+}
+
+/*Fluid value from 568px to 768px*/
+@media screen and (min-width: 568px) {
+  .fluid {
+    font-size: calc(32px + 16 * ((100vw - 568px) / (768 - 568)));
+  }
+}
+
+/*Fixed Maximum value above the maximum breakpoint*/
+@media screen and (min-width: 768px) {
+  .fluid {
+    font-size: 48px;
+  }
+}
+
+/*Improved clamp*/
+/*clamp([value-min], [value-preferred], [value-max]);
+
+isn't in use by internet explorer so you can write a fallback value before the clamp function
+
+font-size: [fallback]
+
+y1: minimum font size
+y2: maximum font size
+x1: minimum viewport width
+x2: maximum viewport width
+
+How to find viewport width 'v'
+
+v = (100 * (y2 - y1))/(x2 - x1)
+
+v is in vw units
+
+
+How to find the relative size 'r'
+
+r = y1 - (v/100) * x1
+
+r result is in pixels, so convert to rem
+
+px/16 = rem value
+
+end result should be 
+font-size: clamp(y1, v + r, y2);
+
+font-size: clamp(2rem, 4vw + 1rem, 3rem);
+
+
+
+Here are my media sizes per Google:
+Mobile S: 320 px
+
+Laptop: 1024 px
+
+y1: 12px
+y2: 24px
+x1: 320/16 rem
+x2: 1024/16 rem
+
+v = (100 * (y2 - y1))/(x2 - x1)
+
+r = (y1 - (v/100) * x1)/16
+
+*/
